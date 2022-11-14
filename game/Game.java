@@ -4,12 +4,12 @@ import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 
-import dev.codemore.display.Display;
-import dev.codemore.display.gfx.Assets;
-import dev.codemore.display.gfx.ImageLoader;
-import dev.codemore.display.gfx.SpriteSheet;
-import dev.codemore.tilegame.input.KeyManager;
-import dev.codemore.tilegame.states.*;
+import display.Display;
+import display.graphics.Assets;
+import display.graphics.ImageLoader;
+import display.graphics.SpriteSheet;
+import input.KeyManager;
+import states.*;
 
 public class Game implements Runnable{
 

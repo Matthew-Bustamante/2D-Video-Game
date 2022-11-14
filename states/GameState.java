@@ -5,8 +5,8 @@ import java.awt.Graphics;
 import display.graphics.Assets;
 import game.Game;
 import entities.creatures.Player;
-import dev.codemore.tilegame.tiles.Tile;
-import dev.codemore.tilegame.worlds.World;
+import tiles.Tile;
+import worlds.World;
 
 public class GameState extends State{
 	

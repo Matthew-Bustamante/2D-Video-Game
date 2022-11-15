@@ -13,7 +13,7 @@ public class Assets {
 	private static final int width = 32, height = 32;
 	
 	//add sprites here 
-	public static BufferedImage player, grass, wall,dirt;
+	public static BufferedImage player, grass, wall, dirt, water;
 	
 	public static void init() {
 		SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/textures/sprite.png"));
@@ -22,6 +22,7 @@ public class Assets {
 		grass = sheet.crop(width, 0, width, height);
 		wall = sheet.crop(width * 2, 0, width, height);
 		dirt = sheet.crop(width * 3, 0, width, height);
+		water = sheet.crop(0, height, width, height);
 		
 	}
 }

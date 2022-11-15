@@ -1,7 +1,7 @@
 package entities.creatures;
 import entities.Entity;
-import handler.Game;
-import handler.Handler;
+import game.Game;
+import game.Handler;
 public abstract class Creature extends Entity {
 	
 	public  static final int DEFAULT_HEALTH = 10;

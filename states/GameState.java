@@ -4,8 +4,8 @@ import java.awt.Graphics;
 
 import display.graphics.Assets;
 import entities.creatures.Player;
-import handler.Game;
-import handler.Handler;
+import game.Game;
+import game.Handler;
 import tiles.Tile;
 import worlds.World;
 

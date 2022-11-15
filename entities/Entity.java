@@ -2,8 +2,8 @@ package entities;
 
 import java.awt.Graphics;
 
-import handler.Game;
-import handler.Handler;
+import game.Game;
+import game.Handler;
 
 public abstract class Entity {
 	

@@ -2,8 +2,8 @@ package worlds;
 
 import java.awt.Graphics;
 
-import handler.Game;
-import handler.Handler;
+import game.Game;
+import game.Handler;
 import tiles.Tile;
 import utils.Utils;
 

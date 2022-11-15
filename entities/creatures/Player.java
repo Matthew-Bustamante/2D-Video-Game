@@ -3,8 +3,8 @@ package entities.creatures;
 import java.awt.Graphics;
 
 import display.graphics.Assets;
-import handler.Game;
-import handler.Handler;
+import game.Game;
+import game.Handler;
 
 public class Player extends Creature{
 

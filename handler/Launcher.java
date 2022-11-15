@@ -1,6 +1,6 @@
-package game;
+package handler;
 
-import game.Game;
+import handler.Game;
 public class Launcher {
 	
 	public static void main(String[]args) {

@@ -1,4 +1,4 @@
-package game;
+package handler;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
@@ -34,6 +34,9 @@ public class Game implements Runnable{
 	//Camera
 	private GameCamera gameCamera;
 	
+	//Handler
+	private Handler handler;
+	
 	/**
 	 * Game Constructor that initializes the title, width, and height
 	 * @param Game Title
@@ -57,10 +60,11 @@ public class Game implements Runnable{
 		Assets.init();
 		
 		gameCamera = new GameCamera(this, 0, 0);
+		handler = new Handler(this);
 		
 		//Initialize States
-		gameState = new GameState(this);
-		menuState = new MenuState(this);
+		gameState = new GameState(handler);
+		menuState = new MenuState(handler);
 		State.setState(gameState);
 	}
 	

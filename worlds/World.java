@@ -19,7 +19,7 @@ public class World {
 	public void render(Graphics g) {
 		for(int y = 0;y < height; y++) {
 			for(int x = 0; x < width;x++) {
-				getTile(x, y).render(g, x, y);
+				getTile(x, y).render(g, x * Tile.TILEWIDTH, y * Tile.TILEHIEGHT);
 				
 			}
 		}
@@ -33,14 +33,6 @@ public class World {
 	}
 	
 	private void loadWorld(String path) {
-		width = 5;
-		height = 5;
-		tiles = new int[width][height];
 		
-		for(int x = 0; x < width; x++) {
-			for(int y= 0; y < height;y++) {
-				tiles[x][y] = 0;
-			}
-		}
 	}
 }

@@ -16,7 +16,7 @@ public class Assets {
 	public static BufferedImage player, grass, wall, dirt, water;
 	
 	public static void init() {
-		SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/textures/sprite.png"));
+		SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/textures/spriteV2.png"));
 		
 		player = sheet.crop(0, 0, width, height);
 		grass = sheet.crop(width, 0, width, height);

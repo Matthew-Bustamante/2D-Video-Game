@@ -13,7 +13,7 @@ public class Assets {
 	private static final int width = 32, height = 32;
 	
 	//add sprites here 
-	public static BufferedImage grass, wall, dirt, water;
+	public static BufferedImage grass, wall, dirt, water, tree;
 	public static BufferedImage[] player_down, player_up, player_right, player_left;
 	
 	public static void init() {
@@ -44,6 +44,7 @@ public class Assets {
 		wall = sheet.crop(width * 2, 0, width, height);
 		dirt = sheet.crop(width * 3, 0, width, height);
 		water = sheet.crop(0, height, width, height);
+		tree = sheet.crop(0, 0, width, height);
 		
 	}
 }

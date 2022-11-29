@@ -17,8 +17,9 @@ public class Assets {
 	public static BufferedImage[] player_down, player_up, player_right, player_left;
 	
 	public static void init() {
-		SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/textures/spriteV2.png"));
+		SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/textures/worldTiles.png"));
 		SpriteSheet playerSheet = new SpriteSheet(ImageLoader.loadImage("/textures/playerSpriteSheet.png"));
+		SpriteSheet treeSheet = new SpriteSheet(ImageLoader.loadImage("/textures/treeTexture.png"));
 		//Player Animation BufferedImage Object Arrays
 		player_down = new BufferedImage[2];
 		player_up = new BufferedImage[2];

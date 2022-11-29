@@ -22,15 +22,16 @@ public class World {
 	public World(Handler handler, String path) {
 		this.handler = handler;
 		entityManager = new EntityManager(handler, new Player(handler, 100, 100));
-		entityManager.addEntity(new Tree(handler, 100, 250));
-		entityManager.addEntity(new Tree(handler, 200, 250));
-		entityManager.addEntity(new Tree(handler, 300, 250));
+		entityManager.addEntity(new Tree(handler, 500, 250));
+		//entityManager.addEntity(new Tree(handler, 200, 250));
+		//entityManager.addEntity(new Tree(handler, 300, 250));
 		loadWorld(path);
 		
 		entityManager.getPlayer().setX(spawnX);
 		entityManager.getPlayer().setY(spawnY);
 	}
 	
+
 	public void tick() {
 		entityManager.tick();
 	}
@@ -83,5 +84,9 @@ public class World {
 	
 	public int getHeight() {
 		return height;
+	}
+	
+	public EntityManager getEntityManager() {
+		return entityManager;
 	}
 }

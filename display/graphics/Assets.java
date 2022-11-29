@@ -17,8 +17,10 @@ public class Assets {
 	public static BufferedImage[] player_down, player_up, player_right, player_left;
 	
 	public static void init() {
-		SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/textures/spriteV2.png"));
+		SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/textures/worldTiles.png"));
 		SpriteSheet playerSheet = new SpriteSheet(ImageLoader.loadImage("/textures/playerSpriteSheet.png"));
+		SpriteSheet treeSheet = new SpriteSheet(ImageLoader.loadImage("/textures/treeTexture.png"));
+		
 		//Player Animation BufferedImage Object Arrays
 		player_down = new BufferedImage[2];
 		player_up = new BufferedImage[2];
@@ -44,7 +46,7 @@ public class Assets {
 		wall = sheet.crop(width * 2, 0, width, height);
 		dirt = sheet.crop(width * 3, 0, width, height);
 		water = sheet.crop(0, height, width, height);
-		tree = sheet.crop(0, 0, width, height);
+		tree = treeSheet.crop(0, 0, width, height);
 		
 	}
 }

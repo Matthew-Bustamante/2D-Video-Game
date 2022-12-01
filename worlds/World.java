@@ -23,8 +23,8 @@ public class World {
 		this.handler = handler;
 		entityManager = new EntityManager(handler, new Player(handler, 100, 100));
 		entityManager.addEntity(new Tree(handler, 500, 280));
-		//entityManager.addEntity(new Tree(handler, 200, 250));
-		//entityManager.addEntity(new Tree(handler, 300, 250));
+		entityManager.addEntity(new Tree(handler, 200, 250));
+		entityManager.addEntity(new Tree(handler, 500, 550));
 		loadWorld(path);
 		
 		entityManager.getPlayer().setX(spawnX);

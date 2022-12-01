@@ -16,6 +16,9 @@ public class Assets {
 	public static BufferedImage grass, wall, dirt, water, tree;
 	public static BufferedImage[] player_down, player_up, player_right, player_left;
 	
+	//tree animation
+	public static BufferedImage [] tree_animation;
+	
 	public static void init() {
 		SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/textures/worldTiles.png"));
 		SpriteSheet playerSheet = new SpriteSheet(ImageLoader.loadImage("/textures/playerSpriteSheet.png"));
@@ -26,6 +29,10 @@ public class Assets {
 		player_up = new BufferedImage[2];
 		player_right = new BufferedImage[2];
 		player_left = new BufferedImage[2];
+		
+		//Tree Animation BufferedImage Object Array
+		tree_animation = new BufferedImage[8];
+		
 		
 		//Player down Animation Crops
 		player_down[0] = playerSheet.crop(0, 0, width, height);
@@ -42,11 +49,26 @@ public class Assets {
 		player_left[0] = playerSheet.crop(32 * 2, 32, width, height);
 		player_left[1] = playerSheet.crop(32 * 3, 32, width, height);
 		
+		
+		
+		//tree animation
+		tree_animation[0] = treeSheet.crop(0, 0, width, height);
+		tree_animation[1] = treeSheet.crop(32, 0, width, height);
+		tree_animation[2] = treeSheet.crop(32 * 2, 0, width, height);
+		tree_animation[3] = treeSheet.crop(32 * 3, 0, width, height);
+		
+		tree_animation[4] = treeSheet.crop(0, 32, width, height);
+		tree_animation[5] = treeSheet.crop(32, 32, width, height);
+		tree_animation[6] = treeSheet.crop(32 * 2, 32, width, height);
+		tree_animation[7] = treeSheet.crop(32 * 3, 32, width, height);
+		
+		
+		
 		grass = sheet.crop(width, 0, width, height);
 		wall = sheet.crop(width * 2, 0, width, height);
 		dirt = sheet.crop(width * 3, 0, width, height);
 		water = sheet.crop(0, height, width, height);
-		tree = treeSheet.crop(0, 0, width, height);
+		//tree = treeSheet.crop(0, 0, width, height);
 		
 	}
 }

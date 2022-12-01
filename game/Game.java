@@ -10,6 +10,7 @@ import display.graphics.GameCamera;
 import display.graphics.ImageLoader;
 import display.graphics.SpriteSheet;
 import input.KeyManager;
+import input.MouseManager;
 import states.*;
 
 public class Game implements Runnable{
@@ -30,6 +31,7 @@ public class Game implements Runnable{
 	
 	//Input
 	private KeyManager keyManager;
+	private MouseManager mouseManager;
 	
 	//Camera
 	private GameCamera gameCamera;
@@ -48,6 +50,7 @@ public class Game implements Runnable{
 		this.height = height;
 		this.title = title;
 		keyManager = new KeyManager();
+		mouseManager = new MouseManager();
 		
 
 	}
@@ -57,6 +60,10 @@ public class Game implements Runnable{
 	private void init() {
 		display = new Display(title, width, height);
 		display.getFrame().addKeyListener(keyManager);
+		display.getFrame().addMouseListener(mouseManager);
+		display.getFrame().addMouseMotionListener(mouseManager);
+		display.getCanvas().addMouseListener(mouseManager);
+		display.getCanvas().addMouseMotionListener(mouseManager);
 		Assets.init();
 		
 		handler = new Handler(this);
@@ -140,6 +147,10 @@ public class Game implements Runnable{
 	
 	public KeyManager getKeyManager() {
 		return keyManager;
+	}
+	
+	public MouseManager getMouseManager() {
+		return mouseManager;
 	}
 	
 	public GameCamera getGameCamera() {

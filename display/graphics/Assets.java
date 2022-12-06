@@ -19,10 +19,14 @@ public class Assets {
 	//tree animation
 	public static BufferedImage [] tree_animation;
 	
+	//UI textures
+	public static BufferedImage[] ui_button;
+	
 	public static void init() {
 		SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/textures/worldTiles.png"));
 		SpriteSheet playerSheet = new SpriteSheet(ImageLoader.loadImage("/textures/playerSpriteSheet.png"));
 		SpriteSheet treeSheet = new SpriteSheet(ImageLoader.loadImage("/textures/treeTexture.png"));
+		SpriteSheet buttonSheet = new SpriteSheet(ImageLoader.loadImage("/textures/uiButtonSheet.png"));
 		
 		//Player Animation BufferedImage Object Arrays
 		player_down = new BufferedImage[2];
@@ -33,6 +37,8 @@ public class Assets {
 		//Tree Animation BufferedImage Object Array
 		tree_animation = new BufferedImage[8];
 		
+		//UI Animation BufferedImage Object Array
+		ui_button = new BufferedImage[2];
 		
 		//Player down Animation Crops
 		player_down[0] = playerSheet.crop(0, 0, width, height);
@@ -61,6 +67,10 @@ public class Assets {
 		tree_animation[5] = treeSheet.crop(32, 32, width, height);
 		tree_animation[6] = treeSheet.crop(32 * 2, 32, width, height);
 		tree_animation[7] = treeSheet.crop(32 * 3, 32, width, height);
+		
+		//UI Button animation
+		ui_button[0] = buttonSheet.crop(0, 0, 64, 32);
+		ui_button[1] = buttonSheet.crop(0, 32, 64, 32);
 		
 		
 		

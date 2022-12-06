@@ -26,8 +26,8 @@ public class Game implements Runnable{
 	private Graphics g;
 	
 	//STATES
-	private State gameState;
-	private State menuState;
+	public State gameState;
+	public State menuState;
 	
 	//Input
 	private KeyManager keyManager;
@@ -72,7 +72,7 @@ public class Game implements Runnable{
 		//Initialize States
 		gameState = new GameState(handler);
 		menuState = new MenuState(handler);
-		State.setState(gameState);
+		State.setState(menuState);
 	}
 	
 	private void tick() {

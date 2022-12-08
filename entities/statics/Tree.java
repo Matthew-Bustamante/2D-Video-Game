@@ -47,4 +47,9 @@ public class Tree extends StaticEntity{
 		return eyeAnimation.getCurrentFrame();
 	}
 	
+	@Override
+	public void die() {
+		
+	}
+	
 }

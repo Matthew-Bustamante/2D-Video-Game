@@ -102,7 +102,7 @@ public abstract class Entity {
 	
 	public void hurt(int ammount) {
 		health -= ammount;
-		hitTracker += 10;
+		hitTracker = 10;
 		if(health <= 0) {
 			active = false;
 			die();

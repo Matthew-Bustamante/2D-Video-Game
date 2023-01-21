@@ -9,10 +9,11 @@ public abstract class StaticEntity extends Entity{
 		super(handler, x, y, width, height);
 	}
 	
-		
+	/*	
+	 * Potential Hurtable Interface code
 	@Override
 	public void hurt(int ammount) {
 		//Overides to do a no hurt
 	}
-	
+	*/
 }

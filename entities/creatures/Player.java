@@ -10,6 +10,7 @@ import display.graphics.Assets;
 import entities.Entity;
 import game.Game;
 import game.Handler;
+import entities.statics.Tree;
 
 public class Player extends Creature{
 	

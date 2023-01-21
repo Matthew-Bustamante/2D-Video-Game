@@ -17,7 +17,7 @@ public class Assets {
 	public static BufferedImage[] player_down, player_up, player_right, player_left;
 	
 	//tree animation
-	public static BufferedImage [] tree_animation;
+	public static BufferedImage [] tree_animation, tree_hurt;
 	
 	//UI textures
 	public static BufferedImage[] ui_button;
@@ -37,8 +37,16 @@ public class Assets {
 		//Tree Animation BufferedImage Object Array
 		tree_animation = new BufferedImage[8];
 		
+		//Tree Hurt Animation BufferedImage Object Array
+		tree_hurt = new BufferedImage[1];
+		
 		//UI Animation BufferedImage Object Array
 		ui_button = new BufferedImage[2];
+		
+		
+		//------------------------------------------------------------------
+		
+		
 		
 		//Player down Animation Crops
 		player_down[0] = playerSheet.crop(0, 0, width, height);
@@ -67,6 +75,11 @@ public class Assets {
 		tree_animation[5] = treeSheet.crop(32, 32, width, height);
 		tree_animation[6] = treeSheet.crop(32 * 2, 32, width, height);
 		tree_animation[7] = treeSheet.crop(32 * 3, 32, width, height);
+		
+		
+		//tree Hurt Animation
+		tree_hurt[0] = treeSheet.crop(0, 67, width, height);
+		
 		
 		//UI Button animation
 		ui_button[0] = buttonSheet.crop(0, 0, 64, 32);

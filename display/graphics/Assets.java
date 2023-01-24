@@ -99,7 +99,7 @@ public class Assets {
 		//tree = treeSheet.crop(0, 0, width, height);
 		
 		//wood item
-		wood = itemSheet.crop(width, 0, width, height);
+		wood = itemSheet.crop(0, 0, width, height);
 		
 	}
 }

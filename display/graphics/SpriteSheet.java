@@ -8,6 +8,10 @@ public class SpriteSheet {
 	
 	private BufferedImage sheet;
 	
+	/**
+	 * SpriteSheet contructor
+	 * @param image to use as a sprite sheet
+	 */
 	public SpriteSheet(BufferedImage sheet) {
 		this.sheet = sheet;
 	}

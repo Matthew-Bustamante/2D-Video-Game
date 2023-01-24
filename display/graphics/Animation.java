@@ -1,13 +1,22 @@
 package display.graphics;
 
 import java.awt.image.BufferedImage;
-
+/**
+ * Animation class that handles animations
+ * @author Matthew-Bustamante
+ *
+ */
 public class Animation {
 	
 	private int speed, index;
 	private long lastTime, timer;
 	private BufferedImage[] frames;
 	
+	/**
+	 * Animation constructor
+	 * @param animation speed
+	 * @param frames
+	 */
 	public Animation(int speed, BufferedImage[] frames) {
 		this.speed = speed;
 		this.frames = frames;
@@ -16,6 +25,9 @@ public class Animation {
 		lastTime = System.currentTimeMillis();
 	}
 	
+	/**
+	 * tick method that controls animation ticking
+	 */
 	public void tick() {
 		timer += System.currentTimeMillis() - lastTime;
 		lastTime = System.currentTimeMillis();
@@ -29,7 +41,10 @@ public class Animation {
 		}
 	}
 	
-	
+	/**
+	 * Returns BufferedImage array
+	 * @return frames array
+	 */
 	public BufferedImage getCurrentFrame() {
 		return frames[index];
 	}

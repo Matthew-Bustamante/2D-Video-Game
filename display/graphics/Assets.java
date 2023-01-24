@@ -14,6 +14,10 @@ public class Assets {
 	
 	//add sprites here 
 	public static BufferedImage grass, wall, dirt, water, tree;
+	// items
+	public static BufferedImage wood;
+	
+	
 	public static BufferedImage[] player_down, player_up, player_right, player_left;
 	
 	//tree animation
@@ -27,6 +31,7 @@ public class Assets {
 		SpriteSheet playerSheet = new SpriteSheet(ImageLoader.loadImage("/textures/playerSpriteSheet.png"));
 		SpriteSheet treeSheet = new SpriteSheet(ImageLoader.loadImage("/textures/treeTexture.png"));
 		SpriteSheet buttonSheet = new SpriteSheet(ImageLoader.loadImage("/textures/uiButtonSheet.png"));
+		SpriteSheet itemSheet = new SpriteSheet(ImageLoader.loadImage("/textures/itemSpriteSheet.png"));
 		
 		//Player Animation BufferedImage Object Arrays
 		player_down = new BufferedImage[2];
@@ -92,6 +97,9 @@ public class Assets {
 		dirt = sheet.crop(width * 3, 0, width, height);
 		water = sheet.crop(0, height, width, height);
 		//tree = treeSheet.crop(0, 0, width, height);
+		
+		//wood item
+		wood = itemSheet.crop(0, 0, width, height);
 		
 	}
 }

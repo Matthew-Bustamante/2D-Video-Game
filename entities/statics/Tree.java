@@ -8,6 +8,7 @@ import display.graphics.Animation;
 import display.graphics.Assets;
 import entities.creatures.Creature;
 import game.Handler;
+import game.items.Item;
 import tiles.Tile;
 
 public class Tree extends StaticEntity{
@@ -62,7 +63,7 @@ public class Tree extends StaticEntity{
 	
 	@Override
 	public void die() {
-		
+		handler.getWorld().getItemManager().addItem(Item.woodItem.createNew((int)x, (int)y));
 	}
 /*	
 	@Override

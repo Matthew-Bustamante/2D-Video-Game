@@ -11,6 +11,12 @@ import game.items.ItemManager;
 import tiles.Tile;
 import utils.Utils;
 
+/**
+ * World class that loads in a world.
+ * Draws entities into the world and draws tiles to the screen.
+ * @author Sethrekar
+ *
+ */
 public class World {
 	private Handler handler;
 	private int width, height;
@@ -23,6 +29,11 @@ public class World {
 	//Item
 	private ItemManager itemManager;
 	
+	/**
+	 * World constructor
+	 * @param handler Object (Handler)
+	 * @param world file path (string)
+	 */
 	public World(Handler handler, String path) {
 		this.handler = handler;
 		entityManager = new EntityManager(handler, new Player(handler, 100, 100));
@@ -37,12 +48,19 @@ public class World {
 		itemManager = new ItemManager(handler);
 	}
 	
-
+	
+	/**
+	 * ticks everything in the world
+	 */
 	public void tick() {
 		itemManager.tick();
 		entityManager.tick();
 	}
 	
+	/**
+	 * renders everything in the world
+	 * @param g
+	 */
 	public void render(Graphics g) {
 		int xStart = (int) Math.max(0, handler.getGameCamera().getxOffset() / Tile.TILEWIDTH);
 		int xEnd = (int) Math.min(width, (handler.getGameCamera().getxOffset() + handler.getWidth()) / Tile.TILEWIDTH + 1);
@@ -62,6 +80,12 @@ public class World {
 		entityManager.render(g);
 	}
 	
+	/**
+	 * Retrieves ids from a text file and puts them in a 2D array
+	 * @param x position (int)
+	 * @param y position (int)
+	 * @return 2D array of tile ids (Tile)
+	 */
 	public Tile getTile (int x, int y) {
 		if(x < 0 || y < 0 || x >= width || y >= height) {
 			return Tile.grassTile;
@@ -72,6 +96,10 @@ public class World {
 		return t;
 	}
 	
+	/**
+	 * loads world
+	 * @param world file path (String)
+	 */
 	private void loadWorld(String path) {
 		String file = Utils.loadFileAsString(path);
 		String[] tokens = file.split("\\s+");
@@ -88,34 +116,58 @@ public class World {
 		}
 	}
 	
+	/**
+	 * returns world width
+	 * @return world width (int)
+	 */
 	public int getWidth() {
 		return width;
 	}
 	
+	/**
+	 * returns world height
+	 * @return world height (int)
+	 */
 	public int getHeight() {
 		return height;
 	}
 	
+	/**
+	 * returns the world entityManager
+	 * @return world entityManager (EntityManager)
+	 */
 	public EntityManager getEntityManager() {
 		return entityManager;
 	}
 
-
+	/**
+	 * returns handler object
+	 * @return handler object (Handler)
+	 */
 	public Handler getHandler() {
 		return handler;
 	}
 
-
+	/**
+	 * sets the handler object
+	 * @param handler object (Handler)
+	 */
 	public void setHandler(Handler handler) {
 		this.handler = handler;
 	}
 
-
+	/**
+	 * returns the ItemManager
+	 * @return ItemManager Object (ItemManager)
+	 */
 	public ItemManager getItemManager() {
 		return itemManager;
 	}
 
-
+	/**
+	 * sets itemManager
+	 * @param itemManager Object (ItemManager)
+	 */
 	public void setItemManager(ItemManager itemManager) {
 		this.itemManager = itemManager;
 	}

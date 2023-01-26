@@ -25,7 +25,9 @@ public class Assets {
 	
 	//UI textures
 	public static BufferedImage[] ui_button;
-	
+	/**
+	 * Initiatlizes images
+	 */
 	public static void init() {
 		SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/textures/worldTiles.png"));
 		SpriteSheet playerSheet = new SpriteSheet(ImageLoader.loadImage("/textures/playerSpriteSheet.png"));

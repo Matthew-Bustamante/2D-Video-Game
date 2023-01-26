@@ -18,6 +18,10 @@ public class MenuState extends State {
 	
 	private UIManager uiManager;
 	
+	/**
+	 * Menu constructor
+	 * @param Handler Object (Handler)
+	 */
 	public MenuState(Handler handler) {
 		super(handler);
 		uiManager = new UIManager(handler);
@@ -43,6 +47,7 @@ public class MenuState extends State {
 
 	/**
 	 * Renders anything that is put onto the menu of the game
+	 * @param Graphics Object (Graphics)
 	 */
 	public void render(Graphics g) {
 		uiManager.render(g);

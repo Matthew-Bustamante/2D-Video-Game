@@ -13,6 +13,13 @@ import input.KeyManager;
 import input.MouseManager;
 import states.*;
 
+/**
+ * Game Class that runs the entire game.  
+ * The game class creates all of the objects needed for the game and houses the game loop.
+ * The game class also sets the frame rate for the game.
+ * @author Matthew-Bustamante
+ *
+ */
 public class Game implements Runnable{
 
 	private Display display;
@@ -55,7 +62,8 @@ public class Game implements Runnable{
 
 	}
 	/**
-	 * init method that initalizes certain aspects of the game
+	 * init method that creates a new display.
+	 * init also adds the key and mouse listners to the display.
 	 */
 	private void init() {
 		display = new Display(title, width, height);
@@ -75,6 +83,9 @@ public class Game implements Runnable{
 		State.setState(menuState);
 	}
 	
+	/**
+	 * ticks the key manager and ticks the State of the game
+	 */
 	private void tick() {
 		keyManager.tick();
 		
@@ -106,7 +117,8 @@ public class Game implements Runnable{
 	}
 	
 	/**
-	 * Run method that runs the game 
+	 * Run method that runs the game.
+	 * This also sets the frame rate of the game which should be 60 fps
 	 */
 	public void run() {
 		
@@ -145,22 +157,42 @@ public class Game implements Runnable{
 		stop();
 	}
 	
+	/**
+	 * returns a KeyManager Object
+	 * @return KeyManager
+	 */
 	public KeyManager getKeyManager() {
 		return keyManager;
 	}
 	
+	/**
+	 * Returns a MouseManager Object
+	 * @return MouseManager
+	 */
 	public MouseManager getMouseManager() {
 		return mouseManager;
 	}
 	
+	/**
+	 * Returns the GameCamera
+	 * @return a GameCamera object
+	 */
 	public GameCamera getGameCamera() {
 		return gameCamera;
 	}
 	
+	/**
+	 * returns the screen width
+	 * @return screen width (int)
+	 */
 	public int getWidth() {
 		return width;
 	}
 	
+	/**
+	 * Returns the screen height
+	 * @return screen height (int)
+	 */
 	public int getHeight() {
 		return height;
 	}

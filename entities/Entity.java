@@ -8,7 +8,7 @@ import game.Handler;
 
 /**
  * Entity Abstract class that is the blueprint for any entity (player, tree, enemy, bullets etc)
- * @author Sethrekar
+ * @author Matthew-Bustamante
  *
  */
 public abstract class Entity {

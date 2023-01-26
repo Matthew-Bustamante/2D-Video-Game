@@ -12,6 +12,12 @@ import game.Game;
 import game.Handler;
 import entities.statics.Tree;
 
+/**
+ * Player class that allows the user to interact with.  The player can move up,down, left, right via key input
+ * and can do melee attacks against other entities, and takes damage from enemy entities
+ * @author Matthew-Bustamante
+ *
+ */
 public class Player extends Creature{
 	
 	//Animations
@@ -21,7 +27,12 @@ public class Player extends Creature{
 	//Attack Timer
 	private long lastAttackTimer, attackCooldown = 500, attackTimer = attackCooldown;
 
-	
+	/**
+	 * Player Constructor
+	 * @param Handler object
+	 * @param x position (float)
+	 * @param y position (float)
+	 */
 	public Player(Handler handler, float x, float y) {
 		super(handler, x, y, Creature.DEFAULT_CREATURE_WIDTH, Creature.DEFAULT_CREATURE_HEIGHT);
 		//Collision Box
@@ -40,6 +51,10 @@ public class Player extends Creature{
 	}
 
 	@Override
+	/**
+	 * tick method that overrides the tick method in Entity and is used for player animations and for 
+	 * key inputs and for movement
+	 */
 	public void tick() {
 		//Animations
 		animDown.tick();
@@ -54,6 +69,11 @@ public class Player extends Creature{
 		checkAttacks();
 	}
 	
+	/**
+	 * Melee attack method:
+	 * When left, right, up, arrow keys are pressed this method checks if an entity is near the player
+	 * if so the method calls the hurt() method in the entity class to deal damage to other entities
+	 */
 	public void checkAttacks() {
 		attackTimer += System.currentTimeMillis() - lastAttackTimer;
 		lastAttackTimer = System.currentTimeMillis();
@@ -99,10 +119,16 @@ public class Player extends Creature{
 	}
 	
 	@Override
+	/**
+	 * Unimplemented die method that when player health is 0 the game ends
+	 */
 	public void die() {
 		System.out.println("Game Over");
 	}
 	
+	/**
+	 * Gathers key input from the user by utilizing the KeyManager class to use for movement and other player actions
+	 */
 	private void getInput() {
 		xMove = 0;
 		yMove = 0;
@@ -124,6 +150,10 @@ public class Player extends Creature{
 	}
 
 	@Override
+	/**
+	 * Renders the player to the screen and renders player animations to the screen
+	 * @param Graphics object
+	 */
 	public void render(Graphics g) {
 		g.drawImage(getCurrentAnimationFrame(), (int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset()), width, height, null);
 		
@@ -134,6 +164,11 @@ public class Player extends Creature{
 		 */
 	}
 	
+	/**
+	 * getCurrentAnimationFrame method that returns the current frame of the player.
+	 * This is used to allow animations to appear on the screen
+	 * @return current animation frame (BufferedImage)
+	 */
 	private BufferedImage getCurrentAnimationFrame() {
 		if(xMove < 0) {
 			return animLeft.getCurrentFrame();

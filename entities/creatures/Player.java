@@ -10,6 +10,7 @@ import display.graphics.Assets;
 import entities.Entity;
 import game.Game;
 import game.Handler;
+import game.inventory.Inventory;
 import entities.statics.Tree;
 
 /**
@@ -24,8 +25,10 @@ public class Player extends Creature{
 	private Animation animDown, animUp, animLeft, animRight;
 	
 	//Attack Timer
-	//Attack Timer
 	private long lastAttackTimer, attackCooldown = 500, attackTimer = attackCooldown;
+	
+	//Iventory
+	private Inventory inventory;
 
 	/**
 	 * Player Constructor
@@ -47,7 +50,7 @@ public class Player extends Creature{
 		animLeft = new Animation(500, Assets.player_left);
 		animRight = new Animation(500, Assets.player_right);
 		
-
+		inventory = new Inventory(handler);
 	}
 
 	@Override
@@ -67,6 +70,8 @@ public class Player extends Creature{
 		handler.getGameCamera().centerOnEntity(this);
 		//Attack
 		checkAttacks();
+		//inventory
+		inventory.tick();
 	}
 	
 	/**
@@ -156,7 +161,7 @@ public class Player extends Creature{
 	 */
 	public void render(Graphics g) {
 		g.drawImage(getCurrentAnimationFrame(), (int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset()), width, height, null);
-		
+		inventory.render(g);
 		 /*
 		  //TEST CODE FOR COLLISIONS
 		g.setColor(Color.red);
@@ -180,5 +185,22 @@ public class Player extends Creature{
 			return animDown.getCurrentFrame();
 		}
 	}
+	
+	/**
+	 * Returns the player's inventory.
+	 * @return inventory object (Inventory)
+	 */
+	public Inventory getInventory() {
+		return inventory;
+	}
+	
+	/**
+	 * Sets the player's inventory
+	 * @param inventory object (Inventory)
+	 */
+	public void setInventory(Inventory inventory) {
+		this.inventory = inventory;
+	}
+	
 }
 

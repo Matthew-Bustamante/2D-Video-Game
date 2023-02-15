@@ -25,6 +25,9 @@ public class Assets {
 	
 	//UI textures
 	public static BufferedImage[] ui_button;
+	
+	//Inventory
+	public static BufferedImage inventoryScreen;
 	/**
 	 * Initiatlizes images
 	 */
@@ -34,6 +37,7 @@ public class Assets {
 		SpriteSheet treeSheet = new SpriteSheet(ImageLoader.loadImage("/textures/treeTexture.png"));
 		SpriteSheet buttonSheet = new SpriteSheet(ImageLoader.loadImage("/textures/uiButtonSheet.png"));
 		SpriteSheet itemSheet = new SpriteSheet(ImageLoader.loadImage("/textures/itemSpriteSheet.png"));
+		SpriteSheet inventorySheet = new SpriteSheet(ImageLoader.loadImage("/textures/inventorySpriteSheet.png"));
 		
 		//Player Animation BufferedImage Object Arrays
 		player_down = new BufferedImage[2];
@@ -102,6 +106,8 @@ public class Assets {
 		
 		//wood item
 		wood = itemSheet.crop(0, 0, width, height);
+		
+		inventoryScreen = inventorySheet.crop(0, 0, 205, 67);
 		
 	}
 }

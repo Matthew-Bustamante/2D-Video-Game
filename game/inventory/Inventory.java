@@ -4,6 +4,7 @@ import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
+import display.graphics.Assets;
 import game.Handler;
 import game.items.Item;
 
@@ -17,6 +18,13 @@ public class Inventory {
 	private Handler handler;
 	private boolean active = false;
 	private ArrayList<Item> inventoryItems;
+	
+	private int invX = 64;
+	private int invY = 48;
+	private int invWidth = 912/2;
+	private int invHeight = 360/2;
+	private int invListCenterX = invX +171;
+	private int invListCenterY = invY / 2 + 5;
 	
 	/**
 	 * Inventory constructor
@@ -39,10 +47,10 @@ public class Inventory {
 		}
 		
 		//Test code
-		System.out.println("INVENTORY WORKING");
-		for(Item i : inventoryItems) {
-			System.out.println(i.getName() + " " +i.getCount());
-		}
+		//System.out.println("INVENTORY WORKING");
+		//for(Item i : inventoryItems) {
+			//System.out.println(i.getName() + " " +i.getCount());
+		//}
 	}
 	
 	/**
@@ -53,6 +61,7 @@ public class Inventory {
 		if(!active) {
 			return;
 		}
+		g.drawImage(Assets.inventoryScreen, invX, invY, invWidth, invHeight, null);
 	}
 
 	

@@ -86,6 +86,9 @@ public class Player extends Creature{
 			return;
 		}
 		
+		if(inventory.isActive()) {
+			return;
+		}
 		
 		Rectangle cb = getCollisionBounds(0, 0);
 		Rectangle ar = new Rectangle();
@@ -138,6 +141,9 @@ public class Player extends Creature{
 		xMove = 0;
 		yMove = 0;
 		
+		if(inventory.isActive()) {
+			return;
+		}
 		if(handler.getKeyManager().up) {
 			yMove = -speed;
 		}

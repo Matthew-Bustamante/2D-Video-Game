@@ -27,6 +27,13 @@ public class Inventory {
 	private int invHeight = 360/2;
 	private int invListCenterX = 161;
 	private int invListCenterY = 151;
+	private int invListSpacing = 30;
+	
+	private int invImageX = 452, invImageY = 82, invImageWidth = 64, invImageHeight = 64;
+	private int invCountX = 452;
+	private int invCountY = 172;
+	
+	private int selectedItem = 0;
 	
 	/**
 	 * Inventory constructor
@@ -48,6 +55,20 @@ public class Inventory {
 			return;
 		}
 		
+		if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_W)) {
+			selectedItem --;
+		}
+		if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_S)) {
+			selectedItem ++;
+		}
+		
+		if(selectedItem < 0) {
+			selectedItem = inventoryItems.size() - 1;
+		}
+		else if(selectedItem >= inventoryItems.size()) {
+			selectedItem = 0;
+		}
+		
 		//Test code
 		//System.out.println("INVENTORY WORKING");
 		//for(Item i : inventoryItems) {
@@ -65,7 +86,29 @@ public class Inventory {
 		}
 		g.drawImage(Assets.inventoryScreen, invX, invY, invWidth, invHeight, null);
 		
-		Text.drawString(g, ">Wood<" ,invListCenterX, invListCenterY, false, Color.WHITE, Assets.font28);
+		//Text.drawString(g, ">Wood<" ,invListCenterX, invListCenterY, false, Color.WHITE, Assets.font28);
+		int len = inventoryItems.size();
+		if(len == 0) {
+			return;
+		}
+		
+		for(int i = -5; i <6; i++) {
+			if(selectedItem + i < 0 || selectedItem + i >= len) {
+				continue;
+			}
+			if(i == 0) {
+			Text.drawString(g, ">" + inventoryItems.get(selectedItem + i).getName(), invListCenterX, invListCenterY + i * invListSpacing, false, Color.YELLOW, Assets.font28);
+	
+			}
+			else {
+			Text.drawString(g, inventoryItems.get(selectedItem + i).getName(), invListCenterX, invListCenterY + i * invListSpacing, false, Color.WHITE, Assets.font28);
+
+			}
+		}
+		
+		Item item = inventoryItems.get(selectedItem);
+		g.drawImage(item.getTexture(), invImageX, invImageY, invImageWidth, invImageHeight, null);
+		Text.drawString(g, Integer.toString(item.getCount()), invCountX, invCountY, false, Color.BLACK, Assets.font28);
 	}
 
 	
@@ -103,6 +146,10 @@ public class Inventory {
 	 */
 	public void setHandler(Handler handler) {
 		this.handler = handler;
+	}
+
+	public boolean isActive() {
+		return active;
 	}
 
 	

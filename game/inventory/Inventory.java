@@ -1,10 +1,12 @@
 package game.inventory;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
 import display.graphics.Assets;
+import display.graphics.Text;
 import game.Handler;
 import game.items.Item;
 
@@ -23,8 +25,8 @@ public class Inventory {
 	private int invY = 48;
 	private int invWidth = 912/2;
 	private int invHeight = 360/2;
-	private int invListCenterX = invX +171;
-	private int invListCenterY = invY / 2 + 5;
+	private int invListCenterX = 161;
+	private int invListCenterY = 151;
 	
 	/**
 	 * Inventory constructor
@@ -62,6 +64,8 @@ public class Inventory {
 			return;
 		}
 		g.drawImage(Assets.inventoryScreen, invX, invY, invWidth, invHeight, null);
+		
+		Text.drawString(g, ">Wood<" ,invListCenterX, invListCenterY, false, Color.WHITE, Assets.font28);
 	}
 
 	

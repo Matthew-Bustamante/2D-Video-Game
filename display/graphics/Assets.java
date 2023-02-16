@@ -1,4 +1,5 @@
 package display.graphics;
+import java.awt.Font;
 import java.awt.image.BufferedImage;
 
 import display.graphics.ImageLoader;
@@ -11,6 +12,9 @@ import display.graphics.SpriteSheet;
 public class Assets {
 	
 	private static final int width = 32, height = 32;
+	
+	//Fonts
+	public static Font font28;
 	
 	//add sprites here 
 	public static BufferedImage grass, wall, dirt, water, tree;
@@ -38,6 +42,8 @@ public class Assets {
 		SpriteSheet buttonSheet = new SpriteSheet(ImageLoader.loadImage("/textures/uiButtonSheet.png"));
 		SpriteSheet itemSheet = new SpriteSheet(ImageLoader.loadImage("/textures/itemSpriteSheet.png"));
 		SpriteSheet inventorySheet = new SpriteSheet(ImageLoader.loadImage("/textures/inventorySpriteSheet.png"));
+		
+		//font28 = FontLoader.loadFont("/fonts/slkscr.ttf", height);
 		
 		//Player Animation BufferedImage Object Arrays
 		player_down = new BufferedImage[2];

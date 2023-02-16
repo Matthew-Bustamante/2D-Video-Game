@@ -94,6 +94,17 @@ public class Item {
 	}
 	
 	/**
+	 * TEST METHOD ONLY!!!
+	 * @param count
+	 * @return
+	 */
+	public Item createNew(int count) {
+		Item i = new Item(texture, name, id);
+		i.setPickedUp(true);
+		i.setCount(count);
+		return i;
+	}
+	/**
 	 * Creates a new item 
 	 * @param x position (int)
 	 * @param y position (int)
@@ -218,6 +229,10 @@ public class Item {
 	 */
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public void setPickedUp(boolean pickedUp) {
+		this.pickedUp = pickedUp;
 	}
 
 	

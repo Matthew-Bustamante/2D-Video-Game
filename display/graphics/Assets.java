@@ -17,7 +17,7 @@ public class Assets {
 	//add sprites here 
 	public static BufferedImage grass, wall, dirt, water, tree;
 	// items
-	public static BufferedImage wood;
+	public static BufferedImage wood, stone;
 	
 	
 	public static BufferedImage[] player_down, player_up, player_right, player_left;
@@ -30,6 +30,9 @@ public class Assets {
 	
 	//Inventory
 	public static BufferedImage inventoryScreen;
+	
+	//Static Entities
+	public static BufferedImage rock;
 	/**
 	 * Initiatlizes images
 	 */
@@ -39,6 +42,7 @@ public class Assets {
 		SpriteSheet treeSheet = new SpriteSheet(ImageLoader.loadImage("/textures/treeTexture.png"));
 		SpriteSheet buttonSheet = new SpriteSheet(ImageLoader.loadImage("/textures/uiButtonSheet.png"));
 		SpriteSheet itemSheet = new SpriteSheet(ImageLoader.loadImage("/textures/itemSpriteSheet.png"));
+		SpriteSheet rockSheet = new SpriteSheet(ImageLoader.loadImage("/textures/rockTexture.png"));
 		
 		//SpriteSheet inventorySheet = new SpriteSheet(ImageLoader.loadImage("/textures/inventoryScreen.png"));
 		
@@ -110,11 +114,14 @@ public class Assets {
 		water = sheet.crop(0, height, width, height);
 		//tree = treeSheet.crop(0, 0, width, height);
 		
-		//wood item
+		//items
 		wood = itemSheet.crop(0, 0, width, height);
+		stone = itemSheet.crop(34, 0, width - 3, height);
 		
 		//inventoryScreen = inventorySheet.crop(0, 0, 384, 512);
 		
+		//Rock Entity
+		rock = rockSheet.crop(0, 0, width, height);
 	}
 }
 

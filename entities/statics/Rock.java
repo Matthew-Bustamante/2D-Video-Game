@@ -5,6 +5,7 @@ import java.awt.Graphics;
 import display.graphics.Assets;
 import entities.creatures.Creature;
 import game.Handler;
+import game.items.Item;
 import tiles.Tile;
 
 public class Rock extends StaticEntity {
@@ -15,8 +16,9 @@ public class Rock extends StaticEntity {
 		bounds.y = 0;
 		bounds.width = Creature.DEFAULT_CREATURE_WIDTH - 25;
 		bounds.height = Creature.DEFAULT_CREATURE_HEIGHT - 10;
-		width = 32;
-		height = 32;
+		width = 72;
+		height = 72;
+		health = 2;
 	}
 	
 	@Override
@@ -45,7 +47,7 @@ public class Rock extends StaticEntity {
 	 * Die method made for the rock to drop the stone item
 	 */
 	public void die() {
-		// TODO Auto-generated method stub
+		handler.getWorld().getItemManager().addItem(Item.stoneItem.createNew((int)x, (int)y));
 		
 	}
 }

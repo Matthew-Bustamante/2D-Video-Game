@@ -17,7 +17,7 @@ public class Assets {
 	//add sprites here 
 	public static BufferedImage grass, wall, dirt, water, tree;
 	// items
-	public static BufferedImage wood;
+	public static BufferedImage wood, stone;
 	
 	
 	public static BufferedImage[] player_down, player_up, player_right, player_left;
@@ -114,8 +114,9 @@ public class Assets {
 		water = sheet.crop(0, height, width, height);
 		//tree = treeSheet.crop(0, 0, width, height);
 		
-		//wood item
+		//items
 		wood = itemSheet.crop(0, 0, width, height);
+		stone = itemSheet.crop(34, 0, width - 3, height);
 		
 		//inventoryScreen = inventorySheet.crop(0, 0, 384, 512);
 		

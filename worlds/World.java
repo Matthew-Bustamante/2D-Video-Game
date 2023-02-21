@@ -46,7 +46,8 @@ public class World {
 		
 		//Rocks
 		
-		entityManager.addEntity(new Rock(handler, 300, 300));
+		entityManager.addEntity(new Rock(handler, 300, 500));
+		entityManager.addEntity(new Rock(handler, 550, 480));
 		loadWorld(path);
 		
 		entityManager.getPlayer().setX(spawnX);

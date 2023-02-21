@@ -41,8 +41,10 @@ public class Assets {
 		SpriteSheet treeSheet = new SpriteSheet(ImageLoader.loadImage("/textures/treeTexture.png"));
 		SpriteSheet buttonSheet = new SpriteSheet(ImageLoader.loadImage("/textures/uiButtonSheet.png"));
 		SpriteSheet itemSheet = new SpriteSheet(ImageLoader.loadImage("/textures/itemSpriteSheet.png"));
-		SpriteSheet inventorySheet = new SpriteSheet(ImageLoader.loadImage("/textures/inventorySpriteSheet.png"));
 		
+		//SpriteSheet inventorySheet = new SpriteSheet(ImageLoader.loadImage("/textures/inventoryScreen.png"));
+		
+		inventoryScreen = ImageLoader.loadImage("/textures/inventoryScreen.png");
 		//font28 = FontLoader.loadFont("/fonts/slkscr.ttf", height);
 		
 		//Player Animation BufferedImage Object Arrays
@@ -113,7 +115,7 @@ public class Assets {
 		//wood item
 		wood = itemSheet.crop(0, 0, width, height);
 		
-		inventoryScreen = inventorySheet.crop(0, 0, 205, 67);
+		//inventoryScreen = inventorySheet.crop(0, 0, 384, 512);
 		
 	}
 }

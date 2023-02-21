@@ -9,7 +9,7 @@ public class Text {
 	
 	public static void drawString(Graphics g, String text, int xPos, int yPos, boolean center, Color c, Font font) {
 		g.setColor(c);
-		g.setFont(font);
+		g.setFont(new Font("TimesRoman", Font.PLAIN, 30));
 		int x = xPos;
 		int y = yPos;
 		if(center) {

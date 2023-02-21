@@ -23,14 +23,14 @@ public class Inventory {
 	
 	private int invX = 64;
 	private int invY = 48;
-	private int invWidth = 912/2;
-	private int invHeight = 360/2;
-	private int invListCenterX = 161;
-	private int invListCenterY = 151;
+	private int invWidth = 512;
+	private int invHeight = 384;
+	private int invListCenterX = invX + 171;
+	private int invListCenterY = invY + invHeight /2 + 5;
 	private int invListSpacing = 30;
 	
 	private int invImageX = 452, invImageY = 82, invImageWidth = 64, invImageHeight = 64;
-	private int invCountX = 452;
+	private int invCountX = 484;
 	private int invCountY = 172;
 	
 	private int selectedItem = 0;
@@ -108,7 +108,7 @@ public class Inventory {
 		
 		Item item = inventoryItems.get(selectedItem);
 		g.drawImage(item.getTexture(), invImageX, invImageY, invImageWidth, invImageHeight, null);
-		Text.drawString(g, Integer.toString(item.getCount()), invCountX, invCountY, false, Color.BLACK, Assets.font28);
+		Text.drawString(g, Integer.toString(item.getCount()), invCountX, invCountY, false, Color.WHITE, Assets.font28);
 	}
 
 	

@@ -13,8 +13,6 @@ public class Assets {
 	
 	private static final int width = 32, height = 32;
 	
-	//Fonts
-	public static Font font28;
 	
 	//add sprites here 
 	public static BufferedImage grass, wall, dirt, water, tree;

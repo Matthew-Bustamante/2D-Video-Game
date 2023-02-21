@@ -97,18 +97,18 @@ public class Inventory {
 				continue;
 			}
 			if(i == 0) {
-			Text.drawString(g, ">" + inventoryItems.get(selectedItem + i).getName(), invListCenterX, invListCenterY + i * invListSpacing, false, Color.YELLOW, Assets.font28);
+			Text.drawString(g, ">" + inventoryItems.get(selectedItem + i).getName() + "<", invListCenterX, invListCenterY + i * invListSpacing, true, Color.YELLOW);
 	
 			}
 			else {
-			Text.drawString(g, inventoryItems.get(selectedItem + i).getName(), invListCenterX, invListCenterY + i * invListSpacing, false, Color.WHITE, Assets.font28);
+			Text.drawString(g, inventoryItems.get(selectedItem + i).getName(), invListCenterX, invListCenterY + i * invListSpacing, true, Color.WHITE);
 
 			}
 		}
 		
 		Item item = inventoryItems.get(selectedItem);
 		g.drawImage(item.getTexture(), invImageX, invImageY, invImageWidth, invImageHeight, null);
-		Text.drawString(g, Integer.toString(item.getCount()), invCountX, invCountY, false, Color.WHITE, Assets.font28);
+		Text.drawString(g, Integer.toString(item.getCount()), invCountX, invCountY, true, Color.WHITE);
 	}
 
 	

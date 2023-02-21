@@ -30,6 +30,9 @@ public class Assets {
 	
 	//Inventory
 	public static BufferedImage inventoryScreen;
+	
+	//Static Entities
+	public static BufferedImage rock;
 	/**
 	 * Initiatlizes images
 	 */
@@ -39,6 +42,7 @@ public class Assets {
 		SpriteSheet treeSheet = new SpriteSheet(ImageLoader.loadImage("/textures/treeTexture.png"));
 		SpriteSheet buttonSheet = new SpriteSheet(ImageLoader.loadImage("/textures/uiButtonSheet.png"));
 		SpriteSheet itemSheet = new SpriteSheet(ImageLoader.loadImage("/textures/itemSpriteSheet.png"));
+		SpriteSheet rockSheet = new SpriteSheet(ImageLoader.loadImage("/textures/rockTexture.png"));
 		
 		//SpriteSheet inventorySheet = new SpriteSheet(ImageLoader.loadImage("/textures/inventoryScreen.png"));
 		
@@ -115,6 +119,8 @@ public class Assets {
 		
 		//inventoryScreen = inventorySheet.crop(0, 0, 384, 512);
 		
+		//Rock Entity
+		rock = rockSheet.crop(0, 0, width, height);
 	}
 }
 

@@ -4,6 +4,7 @@ import java.awt.Graphics;
 
 import entities.EntityManager;
 import entities.creatures.Player;
+import entities.statics.Rock;
 import entities.statics.Tree;
 import game.Game;
 import game.Handler;
@@ -37,9 +38,15 @@ public class World {
 	public World(Handler handler, String path) {
 		this.handler = handler;
 		entityManager = new EntityManager(handler, new Player(handler, 100, 100));
+		
+		//Trees
 		entityManager.addEntity(new Tree(handler, 500, 280));
 		entityManager.addEntity(new Tree(handler, 200, 250));
 		entityManager.addEntity(new Tree(handler, 500, 550));
+		
+		//Rocks
+		
+		entityManager.addEntity(new Rock(handler, 300, 300));
 		loadWorld(path);
 		
 		entityManager.getPlayer().setX(spawnX);

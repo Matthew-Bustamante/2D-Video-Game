@@ -33,6 +33,7 @@ public class Assets {
 	
 	//Static Entities
 	public static BufferedImage rock;
+	public static BufferedImage portal;
 	/**
 	 * Initiatlizes images
 	 */
@@ -43,6 +44,7 @@ public class Assets {
 		SpriteSheet buttonSheet = new SpriteSheet(ImageLoader.loadImage("/textures/uiButtonSheet.png"));
 		SpriteSheet itemSheet = new SpriteSheet(ImageLoader.loadImage("/textures/itemSpriteSheet.png"));
 		SpriteSheet rockSheet = new SpriteSheet(ImageLoader.loadImage("/textures/rockTexture.png"));
+		SpriteSheet portalSheet = new SpriteSheet(ImageLoader.loadImage("/textures/portalTexture.png"));
 		
 		//SpriteSheet inventorySheet = new SpriteSheet(ImageLoader.loadImage("/textures/inventoryScreen.png"));
 		
@@ -122,6 +124,9 @@ public class Assets {
 		
 		//Rock Entity
 		rock = rockSheet.crop(0, 0, width, height);
+		
+		//Portal Entity
+		portal = portalSheet.crop(0, 0, width * 2, height * 2);
 	}
 }
 

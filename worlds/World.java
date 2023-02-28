@@ -4,6 +4,7 @@ import java.awt.Graphics;
 
 import entities.EntityManager;
 import entities.creatures.Player;
+import entities.statics.Portal;
 import entities.statics.Rock;
 import entities.statics.Tree;
 import game.Game;
@@ -48,6 +49,10 @@ public class World {
 		
 		entityManager.addEntity(new Rock(handler, 300, 500));
 		entityManager.addEntity(new Rock(handler, 550, 480));
+		
+		//Portal
+		entityManager.addEntity(new Portal(handler, 1050, 500));
+		
 		loadWorld(path);
 		
 		entityManager.getPlayer().setX(spawnX);

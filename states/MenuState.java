@@ -52,5 +52,6 @@ public class MenuState extends State {
 	public void render(Graphics g) {
 		uiManager.render(g);
 	}
+	
 
 }

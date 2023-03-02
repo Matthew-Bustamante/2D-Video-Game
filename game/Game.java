@@ -34,6 +34,7 @@ public class Game implements Runnable{
 	
 	//STATES
 	public State gameState;
+	public State gameStateTwo;
 	public State menuState;
 	
 	//Input
@@ -80,6 +81,7 @@ public class Game implements Runnable{
 		//Initialize States
 		gameState = new GameState(handler);
 		menuState = new MenuState(handler);
+		//gameStateTwo = new GameStateTwo(handler);
 		State.setState(menuState);
 	}
 	
@@ -195,6 +197,10 @@ public class Game implements Runnable{
 	 */
 	public int getHeight() {
 		return height;
+	}
+	
+	public State getGameState() {
+		return this.gameState;
 	}
 	
 	/**

@@ -53,5 +53,5 @@ public abstract class State {
 	 * @param Graphics Objects (Graphics)
 	 */
 	public abstract void render(Graphics g);
-
+	
 }

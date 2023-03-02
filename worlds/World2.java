@@ -19,7 +19,7 @@ import utils.Utils;
  * @author Sethrekar
  *
  */
-public class World2 {
+public class World2 extends World{
 	private Handler handler;
 	private int width, height;
 	private int spawnX, spawnY;
@@ -37,8 +37,9 @@ public class World2 {
 	 * @param world file path (string)
 	 */
 	public World2(Handler handler, String path) {
+		super(handler, path);
 		this.handler = handler;
-		entityManager = new EntityManager(handler, new Player(handler, 100, 100));
+		entityManager = new EntityManager(handler, handler.getWorld().getEntityManager().getPlayer());
 		
 		//Trees
 		//entityManager.addEntity(new Tree(handler, 500, 280));
@@ -58,7 +59,7 @@ public class World2 {
 		entityManager.getPlayer().setX(spawnX);
 		entityManager.getPlayer().setY(spawnY);
 		
-		itemManager = new ItemManager(handler);
+		itemManager = handler.getWorld().getItemManager();
 	}
 	
 	

@@ -32,7 +32,7 @@ public class GameStateTwo extends State{
 	 */
 	public GameStateTwo(Handler handler) {
 		super(handler);
-		world2 = new World(handler, "worlds/world2.txt");
+		world2 = new World2(handler, "worlds/world2.txt");
 		handler.setWorld(world2);
 		
 	}

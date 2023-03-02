@@ -6,6 +6,7 @@ import java.util.Comparator;
 import java.util.Iterator;
 
 import entities.creatures.Player;
+import entities.statics.Portal;
 import game.Handler;
 
 /**
@@ -124,4 +125,5 @@ public class EntityManager {
 	public void setEntities(ArrayList<Entity> entities) {
 		this.entities = entities;
 	}
+	
 }

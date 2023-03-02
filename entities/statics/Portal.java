@@ -4,7 +4,11 @@ import java.awt.Graphics;
 
 import display.graphics.Assets;
 import entities.creatures.Creature;
+import game.Game;
 import game.Handler;
+import states.GameState;
+import states.GameStateTwo;
+import states.State;
 import tiles.Tile;
 
 /**
@@ -16,12 +20,14 @@ import tiles.Tile;
  */
 public class Portal extends StaticEntity {
 	
+	
 	/**
 	 * Portal constructor
 	 * @param handler object (Handler)
 	 * @param x position (float)
 	 * @param y position (float)
 	 */
+	private State gameStateTwo;
 	public Portal(Handler handler, float x, float y) {
 		super(handler, x , y, Tile.TILEWIDTH, Tile.TILEHIEGHT * 2);
 		bounds.x = 0;
@@ -50,7 +56,9 @@ public class Portal extends StaticEntity {
 
 	@Override
 	public void die() {
-		// TODO Auto-generated method stub
-		
-	}
+		gameStateTwo = new GameStateTwo(handler);
+		State.setState(gameStateTwo);
+		}
+	
+	
 }

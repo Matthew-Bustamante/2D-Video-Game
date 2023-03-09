@@ -20,16 +20,16 @@ import utils.Utils;
  *
  */
 public class World {
-	private Handler handler;
-	private int width, height;
+	protected Handler handler;
+	protected int width, height;
 	private int spawnX, spawnY;
 	private int[][] tiles;
 	
 	//Entities
-	private EntityManager entityManager;
+	protected EntityManager entityManager;
 	
 	//Item
-	private ItemManager itemManager;
+	protected ItemManager itemManager;
 	
 	/**
 	 * World constructor

@@ -3,6 +3,7 @@ package game;
 import display.graphics.GameCamera;
 import input.KeyManager;
 import input.MouseManager;
+import worlds.Universe;
 import worlds.World;
 
 /**
@@ -14,7 +15,7 @@ import worlds.World;
 public class Handler {
 	
 	private Game game;
-	private World world;
+	private Universe world;
 	
 	/**
 	 * Handler constructor.
@@ -84,7 +85,7 @@ public class Handler {
 	 * Retrieves the World class
 	 * @return World Object
 	 */
-	public World getWorld() {
+	public Universe getWorld() {
 		return world;
 	}
 	
@@ -92,7 +93,7 @@ public class Handler {
 	 * Sets the World class
 	 * @param World Object
 	 */
-	public void setWorld(World world) {
+	public void setWorld(Universe world) {
 		this.world = world;
 	}
 }

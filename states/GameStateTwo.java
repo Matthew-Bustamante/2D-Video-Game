@@ -12,6 +12,7 @@ import entities.statics.Tree;
 import game.Game;
 import game.Handler;
 import tiles.Tile;
+import worlds.Universe;
 import worlds.World;
 import worlds.World2;
 
@@ -23,7 +24,7 @@ import worlds.World2;
 public class GameStateTwo extends State{
 	
 
-	private World world2;
+	private Universe world2;
 
 	/**
 	 * GameState Constructor

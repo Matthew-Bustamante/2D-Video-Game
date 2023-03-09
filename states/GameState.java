@@ -12,8 +12,10 @@ import entities.statics.Tree;
 import game.Game;
 import game.Handler;
 import tiles.Tile;
+import worlds.Universe;
 import worlds.World;
 import worlds.World2;
+import worlds.WorldOne;
 
 /**
  * GameState class handles creating new worlds and for ticking worlds as well as rendering worlds
@@ -23,7 +25,7 @@ import worlds.World2;
 public class GameState extends State{
 	
 
-	private World world;
+	private Universe world;
 
 	/**
 	 * GameState Constructor
@@ -32,7 +34,7 @@ public class GameState extends State{
 	 */
 	public GameState(Handler handler) {
 		super(handler);
-		world = new World(handler, "worlds/world1.txt");
+		world = new WorldOne(handler, "worlds/world1.txt");
 		handler.setWorld(world);
 		
 		/*
